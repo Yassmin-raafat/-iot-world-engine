@@ -1,0 +1,8 @@
+services:
+  thingsboard:
+    image: thingsboard/tb-postgres
+    ports:
+      - "9090:9090"
+      - "1883:1883"
+    environment:
+      - TB_TRANSPORT_MQTT_ENABLED=true
