@@ -6,3 +6,10 @@ services:
       - "1883:1883"
     environment:
       - TB_TRANSPORT_MQTT_ENABLED=true
+    volumes:
+      - tb-data:/data
+      - tb-logs:/var/log/thingsboard
+
+volumes:
+  tb-data:
+  tb-logs:

@@ -6,7 +6,7 @@ BASE_URL = "http://localhost:9090"
 USERNAME = "tenant@thingsboard.org"
 PASSWORD = "tenant"
 
-# 🔐 login
+#  login
 res = requests.post(
     f"{BASE_URL}/api/auth/login",
     json={"username": USERNAME, "password": PASSWORD}
@@ -21,7 +21,7 @@ headers = {
 
 devices = []
 
-# 🏢 create 200 rooms (10 floors × 20 rooms)
+#  create 200 rooms (10 floors × 20 rooms)
 for floor in range(1, 11):
     for room in range(1, 21):
         name = f"b01-f{floor:02d}-r{room:03d}"
@@ -39,7 +39,7 @@ for floor in range(1, 11):
 
         device_id = r.json()["id"]["id"]
 
-        # 🔑 get token
+      
         cred = requests.get(
             f"{BASE_URL}/api/device/{device_id}/credentials",
             headers=headers
@@ -52,7 +52,7 @@ for floor in range(1, 11):
 
         print("Created:", name)
 
-# 💾 save tokens
+
 with open("tokens.json", "w") as f:
     json.dump(devices, f, indent=2)
 
