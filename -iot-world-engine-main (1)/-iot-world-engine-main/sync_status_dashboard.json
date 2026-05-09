@@ -1,0 +1,258 @@
+{
+  "title": "Sync Status Dashboard",
+  "image": null,
+  "mobileHide": false,
+  "mobileOrder": null,
+  "configuration": {
+    "description": "",
+    "widgets": {
+      "3d3e3b6f-5c70-4da5-9e5b-syncstatus001": {
+        "typeFullFqn": "system.cards.entities_table",
+        "type": "latest",
+        "sizeX": 24,
+        "sizeY": 8,
+        "config": {
+          "title": "Sync Status",
+          "showTitle": true,
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "4px",
+          "settings": {
+            "enableSearch": true,
+            "enableSelectColumnDisplay": true,
+            "enableStickyHeader": true,
+            "enableStickyAction": true,
+            "reserveSpaceForHiddenAction": "true",
+            "displayEntityName": false,
+            "displayEntityLabel": false,
+            "displayEntityType": false,
+            "displayPagination": true,
+            "defaultPageSize": 200,
+            "defaultSortOrder": "name",
+            "useRowStyleFunction": true,
+            "rowStyleFunction": "if (entity && entity.sync_status === 'OUT_OF_SYNC') { return {backgroundColor: 'rgba(244,67,54,0.12)'}; }\nreturn {};",
+            "entitiesTitle": "All rooms. Use search value OUT_OF_SYNC to filter drift."
+          },
+          "timewindow": {
+            "displayValue": "",
+            "selectedTab": 0,
+            "realtime": {
+              "realtimeType": 1,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "quickInterval": "CURRENT_DAY",
+              "hideInterval": false,
+              "hideLastInterval": false,
+              "hideQuickInterval": false
+            },
+            "history": {
+              "historyType": 0,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "fixedTimewindow": {
+                "startTimeMs": 1778011997096,
+                "endTimeMs": 1778098397096
+              },
+              "quickInterval": "CURRENT_DAY",
+              "hideInterval": false,
+              "hideLastInterval": false,
+              "hideFixedInterval": false,
+              "hideQuickInterval": false
+            },
+            "aggregation": {
+              "type": "NONE",
+              "limit": 200
+            }
+          },
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 500,
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": false,
+          "showLegend": false,
+          "datasources": [
+            {
+              "type": "entity",
+              "name": "",
+              "entityAliasId": "00ac4e59-f0b1-13e2-e54e-fdcda53163bc",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "name",
+                  "type": "entityField",
+                  "label": "Device Name",
+                  "color": "#2196f3",
+                  "settings": {}
+                },
+                {
+                  "name": "last_seen",
+                  "type": "attribute",
+                  "label": "Last Seen",
+                  "color": "#607d8b",
+                  "settings": {},
+                  "decimals": 0
+                },
+                {
+                  "name": "desired_hvac",
+                  "type": "attribute",
+                  "label": "Desired HVAC",
+                  "color": "#4caf50",
+                  "settings": {},
+                  "decimals": 0
+                },
+                {
+                  "name": "reported_hvac",
+                  "type": "attribute",
+                  "label": "Reported HVAC",
+                  "color": "#f44336",
+                  "settings": {},
+                  "decimals": 0
+                },
+                {
+                  "name": "desired_dimmer",
+                  "type": "attribute",
+                  "label": "Desired Dimmer",
+                  "color": "#ff9800",
+                  "settings": {},
+                  "decimals": 0
+                },
+                {
+                  "name": "reported_dimmer",
+                  "type": "attribute",
+                  "label": "Reported Dimmer",
+                  "color": "#3f51b5",
+                  "settings": {},
+                  "decimals": 0
+                },
+                {
+                  "name": "sync_status",
+                  "type": "attribute",
+                  "label": "Sync Status",
+                  "color": "#009688",
+                  "settings": {},
+                  "decimals": 0
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "displayTimewindow": false,
+          "configMode": "basic",
+          "actions": {
+            "rowClick": [
+              {
+                "name": "Open room control panel",
+                "icon": "open_in_new",
+                "type": "openDashboard",
+                "targetDashboardId": "630bafa0-4969-11f1-953b-211db070a125",
+                "setEntityId": true,
+                "stateEntityParamName": "entityId",
+                "openRightLayout": false,
+                "openNewBrowserTab": false
+              }
+            ]
+          },
+          "showTitleIcon": true,
+          "titleIcon": "sync",
+          "iconColor": "#1F6BDD",
+          "titleFont": null,
+          "titleColor": null
+        },
+        "row": 0,
+        "col": 0,
+        "id": "3d3e3b6f-5c70-4da5-9e5b-syncstatus001"
+      }
+    },
+    "states": {
+      "default": {
+        "name": "Sync Status Dashboard",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "3d3e3b6f-5c70-4da5-9e5b-syncstatus001": {
+                "sizeX": 24,
+                "sizeY": 8,
+                "row": 0,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "layoutType": "default",
+              "backgroundColor": "#eeeeee",
+              "columns": 24,
+              "margin": 10,
+              "outerMargin": true,
+              "backgroundSizeMode": "100%",
+              "rowHeight": 70
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {
+      "00ac4e59-f0b1-13e2-e54e-fdcda53163bc": {
+        "id": "00ac4e59-f0b1-13e2-e54e-fdcda53163bc",
+        "alias": "All Devices",
+        "filter": {
+          "type": "entityType",
+          "resolveMultiple": true,
+          "entityType": "DEVICE"
+        }
+      }
+    },
+    "filters": {},
+    "timewindow": {
+      "displayValue": "",
+      "hideAggregation": false,
+      "hideAggInterval": false,
+      "hideTimezone": false,
+      "selectedTab": 0,
+      "realtime": {
+        "realtimeType": 0,
+        "interval": 1000,
+        "timewindowMs": 60000,
+        "quickInterval": "CURRENT_DAY",
+        "hideInterval": false,
+        "hideLastInterval": false,
+        "hideQuickInterval": false
+      },
+      "history": {
+        "historyType": 0,
+        "interval": 1000,
+        "timewindowMs": 60000,
+        "fixedTimewindow": {
+          "startTimeMs": 1778000946733,
+          "endTimeMs": 1778087346733
+        },
+        "quickInterval": "CURRENT_DAY",
+        "hideInterval": false,
+        "hideLastInterval": false,
+        "hideFixedInterval": false,
+        "hideQuickInterval": false
+      },
+      "aggregation": {
+        "type": "AVG",
+        "limit": 25000
+      }
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": false,
+      "showDashboardsSelect": true,
+      "showEntitiesSelect": true,
+      "showDashboardTimewindow": true,
+      "showDashboardExport": true,
+      "toolbarAlwaysOpen": true
+    }
+  },
+  "name": "Sync Status Dashboard",
+  "resources": []
+}
